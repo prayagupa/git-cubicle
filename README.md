@@ -1,36 +1,55 @@
-git how to fix can not push changes
+# git-workspace
 
-http://stackoverflow.com/a/24022075/432903
+A multi-root VS Code workspace for local development across several projects.
 
-Problem
---------
+## Repositories
 
-I'm user1, a nice guy. I started working on a project with last commit as `user1-commit1`.
+| Repo | Description |
+|------|-------------|
+| [adselection-microservice-nodejs](https://github.com/prayagupa/adselection-microservice-nodejs) | Ad selection microservice built with Node.js |
+| [travel-with-nodejs](https://github.com/prayagupa/travel-with-nodejs) | Travel application built with Node.js |
+| [config-using-chef](https://github.com/prayagupa/config-using-chef) | Infrastructure configuration using Chef |
 
-My boss comes in and says WTF, you need to make some changes. Me being a nice make changes 
-and make a `commit2`.
+## Getting Started
 
-And while trying to push it, error pops up
+Clone all repositories at once using the provided script:
 
 ```bash
-
-$ git push origin HEAD
-To https://github.com/prayagupd/git-troubled.git
- ! [rejected]        HEAD -> master (fetch first)
-error: failed to push some refs to 'https://github.com/prayagupd/git-troubled.git'
-hint: Updates were rejected because the remote contains work that you do
-hint: not have locally. This is usually caused by another repository pushing
-hint: to the same ref. You may want to first integrate the remote changes
-hint: (e.g., 'git pull ...') before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-
+chmod +x clone-workspaces.sh
+./clone-workspaces.sh
 ```
 
-Then I figured out Son of a programmer, user2 already made changes the same branch I
-was working on, but me being a nice guy did not freak out at all.
+Or clone into a custom directory:
 
-Instead stashed my uncommited changes.
-
+```bash
+./clone-workspaces.sh --dir ~/projects
 ```
 
+The script is idempotent — safe to re-run; already-cloned repos are skipped.
+
+### Clone manually (HTTPS)
+
+```bash
+git clone https://github.com/prayagupa/adselection-microservice-nodejs.git
+git clone https://github.com/prayagupa/travel-with-nodejs.git
+git clone https://github.com/prayagupa/config-using-chef.git
 ```
+
+### Clone manually (SSH)
+
+```bash
+git clone git@github.com:prayagupa/adselection-microservice-nodejs.git
+git clone git@github.com:prayagupa/travel-with-nodejs.git
+git clone git@github.com:prayagupa/config-using-chef.git
+```
+
+### Clone via GitHub CLI
+
+```bash
+gh repo clone prayagupa/adselection-microservice-nodejs
+gh repo clone prayagupa/travel-with-nodejs
+gh repo clone prayagupa/config-using-chef
+```
+
+---
+

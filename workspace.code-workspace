@@ -1,0 +1,21 @@
+{
+  "folders": [
+    {
+      "name": "git-workspace",
+      "path": "."
+    },
+    {
+      "name": "adselection-microservice-nodejs",
+      "path": "../adselection-microservice-nodejs"
+    },
+    {
+      "name": "travel-with-nodejs",
+      "path": "../travel-with-nodejs"
+    },
+    {
+      "name": "config-using-chef",
+      "path": "../config-using-chef"
+    }
+  ],
+  "settings": {}
+}
